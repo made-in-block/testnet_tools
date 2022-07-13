@@ -14,7 +14,7 @@ reset:
 	docker-compose rm
 	rm -f ./config/addrbook.json || true
 	rm -f ./config/write-file* || true
-	rm -rf ./data/ || true 
+	sudo rm -rf ./data/ || true 
 	mkdir -p ./data/
 	cp priv_validator_state.json ./data
 
