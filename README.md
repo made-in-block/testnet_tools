@@ -41,7 +41,7 @@ make start
 
 Your environment now contains:
 
-- [bitsongd](http://github.com/bitsongofficial/go.bitsong) RPC node running on `tcp://localhost:26657`
+- [go-bitsong](http://github.com/bitsongofficial/go-bitsong) RPC node running on `tcp://localhost:26657`
 - LCD running on http://localhost:1317
 
 Stop `go-bitsong` (and retain chain data):
