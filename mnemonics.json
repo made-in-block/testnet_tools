@@ -1,0 +1,27 @@
+{
+    "mnemonics": [{
+        "name": "validator",
+        "address": "bitsong1app8yxq5fth6x45cm74k0d07gg586qmdee42el",
+        "pubkey": {"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A60PsWQFGT3BcEV1cd7CKSsHZJJoPD2Rsg85s7xdpOpP"},
+        "mnemonic": "human visual corn anchor pond buffalo limit radar used winner orphan taxi library warm finger pattern doctor disagree ask minimum frequent electric foam program"
+      },
+      {
+        "name": "user1",
+        "address": "bitsong1zwyt5styty8aa9snray69jtnyhhntq3yuvdpce",
+        "pubkey": {"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AxRerS0OYty43ZeC+QQ2yXAOitPG0xiNkkzTt5mhBGJL"},
+        "mnemonic": "satisfy town rack armed black belt equip ribbon such course drip float measure nature shift gospel flight monster abuse daughter stone canyon picnic satisfy"
+      },
+      {
+        "name": "user2",
+        "address": "bitsong1whd73l9dkkey8ru8vj8rvzgxt5pm2kd8sz6wuy",
+        "pubkey": {"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A2B+woCM2lUuIsiJoX6d6UM65ZgV10JR/tvsW7W6RF3K"},
+        "mnemonic": "idle popular match scissors news pumpkin slush legend cup one estate purchase drill history cheese field liar follow ripple gown since skate dirt stone"
+      },
+      {
+        "name": "user3",
+        "address": "bitsong15wvtc7c9ujew5zn7p6ym7s7wkywvemgek708lt",
+        "pubkey": {"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A7Q/m2VHvkk8EvMpVV3iZINSHycnXvK45qQdRjZTnxON"},
+        "mnemonic": "orient suit behave effort curious skate wild parade about sing farm such teach gesture chest size flavor evil shrug slush canoe fold trumpet muffin"
+      }
+    ]
+  }

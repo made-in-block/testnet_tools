@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  go-bitsong:
+    image: bitsongofficial/go-bitsong:latest
+    user: $UID:$GID
+    volumes:
+      - ./config:/go-bitsong/.bitsongd/config
+      - ./data:/go-bitsong/.bitsongd/data
+    command:
+      - start
+    ports:
+      - "26657:26657"
+      - "1317:1317"
+      - "9090:9090"
+      - "9091:9091"
