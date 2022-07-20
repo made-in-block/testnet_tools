@@ -8,6 +8,9 @@ start:
 	env UID=${CURRENT_UID} GID=${CURRENT_GID}  docker-compose up
 
 startd:
+	@if ! [ -f data/priv_validator_state.json ]; \
+		then mkdir -p ./data/ && cp priv_validator_state.json ./data ; \
+	fi
 	env UID=${CURRENT_UID} GID=${CURRENT_GID}  docker-compose up -d
 
 stop:
