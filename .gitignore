@@ -60,3 +60,6 @@ node_modules/
 logs/
 config/addrbook.json
 config/write-file-atomic*
+
+bitsong/data
+osmosis/data

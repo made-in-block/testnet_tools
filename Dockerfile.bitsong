@@ -1,0 +1,33 @@
+## --------------------------------------------------------
+# Build 
+# --------------------------------------------------------
+
+FROM golang:1.18.3-alpine3.15 as build
+
+RUN set -eux; apk add --no-cache ca-certificates build-base;
+RUN apk add git
+# Needed by github.com/zondax/hid
+RUN apk add linux-headers
+
+RUN git clone https://github.com/bitsongofficial/go-bitsong /bitsong --branch v0.11.0
+WORKDIR /bitsong
+
+RUN LEDGER_ENABLED=false CGO_ENABLED=0 make build
+
+# --------------------------------------------------------
+# Runner
+# --------------------------------------------------------
+
+FROM debian:11
+
+RUN apt update && apt install bash -y
+COPY --from=build /bitsong/build/bitsongd /bin/bitsongd
+
+RUN useradd --system -m -d /bitsong --uid 1000 bitsong
+WORKDIR /bitsong
+
+USER bitsong
+
+EXPOSE 26656
+EXPOSE 26657
+EXPOSE 1317

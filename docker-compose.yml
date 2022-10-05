@@ -1,16 +1,32 @@
-version: "3"
-
+version: '3.8'
 services:
-  go-bitsong:
-    image: bitsongofficial/go-bitsong:latest
+  bitsong:
+    image: bzone/bitsong:v0.11.0
+    hostname: bitsong
     user: $UID:$GID
+    build:
+      context: .
+      dockerfile: Dockerfile.bitsong
     volumes:
-      - ./config:/go-bitsong/.bitsongd/config
-      - ./data:/go-bitsong/.bitsongd/data
+      - ./bitsong:/bitsong/.bitsongd
     command:
+      - bitsongd
       - start
     ports:
-      - "26657:26657"
-      - "1317:1317"
-      - "9090:9090"
-      - "9091:9091"
+      - 26657:26657
+      - 1317:1317
+  osmosis:
+    image: bzone/osmosis:v12.1.0
+    hostname: osmosis
+    user: $UID:$GID
+    build:
+      context: .
+      dockerfile: Dockerfile.osmosis
+    volumes:
+      - ./osmosis:/osmosis/.osmosisd
+    command:
+      - osmosisd
+      - start
+    ports:
+      - 26757:26657
+      - 1327:1317
