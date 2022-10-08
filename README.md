@@ -43,7 +43,7 @@ Your environment now contains:
 
 - [go-bitsong](http://github.com/bitsongofficial/go-bitsong) RPC node running on `tcp://localhost:26657`
 - LCD running on http://localhost:1317
-- [osmosis](https://github.com/osmosis-labs/osmosis) RPC node running on `tcp://localhost:26657`
+- [osmosis](https://github.com/osmosis-labs/osmosis) RPC node running on `tcp://localhost:27657`
 - LCD running on http://localhost:1427
 
 Stop `all` (and retain chain data):
