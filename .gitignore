@@ -63,6 +63,8 @@ config/write-file-atomic*
 
 bitsong/*
 osmosis/*
+hermes/*
 
 !scripts/bitsong/*
 !scripts/osmosis/*
+!scripts/hermes/*
