@@ -23,6 +23,9 @@ startd:
 	@if ! [ -d bitsong ]; \
 		then mkdir ./bitsong ; \
 	fi
+	@if ! [ -d hermes ]; \
+		then mkdir ./hermes ; \
+	fi
 	env UID=${CURRENT_UID} GID=${CURRENT_GID}  docker-compose up -d
 
 stop:
@@ -32,3 +35,4 @@ reset:
 	docker-compose rm
 	rm -rf ./bitsong || true
 	rm -rf ./osmosis || true 
+	rm -rf ./hermes || true 
