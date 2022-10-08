@@ -3,30 +3,32 @@ services:
   bitsong:
     image: bzone/bitsong:v0.11.0
     hostname: bitsong
-    user: $UID:$GID
     build:
       context: .
       dockerfile: Dockerfile.bitsong
     volumes:
-      - ./bitsong:/bitsong/.bitsongd
-    command:
-      - bitsongd
-      - start
+      - ./bitsong:/bitsong/.bitsongd/
+      - ./scripts/bitsong/setup.sh:/bitsong/setup.sh
+    entrypoint:
+      - /bitsong/setup.sh
     ports:
       - 26657:26657
       - 1317:1317
+      - 9090:9090
+      - 9091:9091
   osmosis:
     image: bzone/osmosis:v12.1.0
     hostname: osmosis
-    user: $UID:$GID
     build:
       context: .
       dockerfile: Dockerfile.osmosis
     volumes:
-      - ./osmosis:/osmosis/.osmosisd
-    command:
-      - osmosisd
-      - start
+      - ./osmosis:/osmosis/.osmosisd/
+      - ./scripts/osmosis/setup.sh:/osmosis/setup.sh
+    entrypoint:
+      - /osmosis/setup.sh
     ports:
-      - 26757:26657
-      - 1327:1317
+      - 27657:26657
+      - 1417:1317
+      - 9190:9090
+      - 9191:9091

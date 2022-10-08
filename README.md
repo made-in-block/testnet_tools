@@ -31,9 +31,9 @@ sudo apt install docker.io -y
 sudo apt install docker-compose -y
 ```
 
-## Start, stop, and reset `go-bitsong`
+## Start, stop, and reset `bitsong` and `osmosis`
 
-- Start `go-bitsong`:
+- Start `bitsong` and `osmosis`:
 
 ```sh
 make start
@@ -43,14 +43,16 @@ Your environment now contains:
 
 - [go-bitsong](http://github.com/bitsongofficial/go-bitsong) RPC node running on `tcp://localhost:26657`
 - LCD running on http://localhost:1317
+- [osmosis](https://github.com/osmosis-labs/osmosis) RPC node running on `tcp://localhost:26657`
+- LCD running on http://localhost:1427
 
-Stop `go-bitsong` (and retain chain data):
+Stop `all` (and retain chain data):
 
 ```sh
 make stop
 ```
 
-Stop `go-bitsong` (and delete chain data):
+Stop `all` (and delete chains data):
 
 ```sh
 make restart
@@ -97,14 +99,11 @@ You can change the `genesis.json` file by altering `config/genesis.json`. To loa
 
 ## Accounts
 
-LocalOsmosis is pre-configured with one validator and 10 accounts with ION and OSMO balances.
+Docker is pre-configured with one validator.
 
 | Account   | Address                                                                                                  | Mnemonic                                                                                                                                                                   |
 | --------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| validator | `bitsong1app8yxq5fth6x45cm74k0d07gg586qmdee42el`<br/>`bitsongvaloper1pnudhva4k9xvpyz55qv69pgcuglwpnc2em2x96` | `human visual corn anchor pond buffalo limit radar used winner orphan taxi library warm finger pattern doctor disagree ask minimum frequent electric foam program`                    |
-| user1     | `bitsong1zwyt5styty8aa9snray69jtnyhhntq3yuvdpce`                                                           | `satisfy town rack armed black belt equip ribbon such course drip float measure nature shift gospel flight monster abuse daughter stone canyon picnic satisfy`                       |
-| user2     | `bitsong1whd73l9dkkey8ru8vj8rvzgxt5pm2kd8sz6wuy`                                                           | `idle popular match scissors news pumpkin slush legend cup one estate purchase drill history cheese field liar follow ripple gown since skate dirt stone`              |
-| user3     | `bitsong15wvtc7c9ujew5zn7p6ym7s7wkywvemgek708lt`                                                           | `orient suit behave effort curious skate wild parade about sing farm such teach gesture chest size flavor evil shrug slush canoe fold trumpet muffin`        |
+| validator | `bitsong1gws6wz8q5kyyu4gqze48fwlmm4m0mdjz0620gw`<br/>`osmo12smx2wdlyttvyzvzg54y2vnqwq2qjateuf7thj` | `human visual corn anchor pond buffalo limit radar used winner orphan taxi library warm finger pattern doctor disagree ask minimum frequent electric foam program`                    |
 
 ## Common issues
 
