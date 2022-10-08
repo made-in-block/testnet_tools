@@ -61,5 +61,8 @@ logs/
 config/addrbook.json
 config/write-file-atomic*
 
-./bitsong/
-./osmosis/
+bitsong/
+osmosis/
+
+!scripts/bitsong/
+!scripts/osmosis/
