@@ -12,10 +12,10 @@ services:
     entrypoint:
       - /bitsong/setup.sh
     ports:
-      - 26657:26657
-      - 1317:1317
-      - 9090:9090
-      - 9091:9091
+      - "26657:26657"
+      - "1317:1317"
+      - "9090:9090"
+      - "9091:9091"
   osmosis:
     image: bzone/osmosis:v12.1.0
     hostname: osmosis
@@ -32,3 +32,21 @@ services:
       - 1417:1317
       - 9190:9090
       - 9191:9091
+  hermes:
+    image: bzone/hermes:v0.15.0
+    hostname: hermes
+    build:
+      context: .
+      dockerfile: Dockerfile.hermes
+    volumes:
+      - ./hermes:/hermes/.hermes
+      - ./scripts/hermes/config.toml:/hermes/.hermes/config.toml
+      - ./scripts/hermes/key.bitsong.json:/tmp/key.bitsong.json
+      - ./scripts/hermes/key.osmosis.json:/tmp/key.osmosis.json
+      - ./scripts/hermes/setup.sh:/hermes/setup.sh
+    entrypoint:
+      - /hermes/setup.sh
+    restart: always
+    depends_on:
+      - bitsong
+      - osmosis

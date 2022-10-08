@@ -44,7 +44,7 @@ edit_genesis () {
     dasel put string -f $GENESIS '.app_state.gov.voting_params.voting_period' '60s'
     dasel put string -f $GENESIS '.app_state.gov.deposit_params.min_deposit.[0].denom' 'ubtsg'
 
-    #......
+    # ....remove stake denom
 }
 
 add_genesis_accounts () {

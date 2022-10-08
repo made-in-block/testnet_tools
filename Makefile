@@ -11,6 +11,9 @@ start:
 	@if ! [ -d bitsong ]; \
 		then mkdir ./bitsong ; \
 	fi
+	@if ! [ -d hermes ]; \
+		then mkdir ./hermes ; \
+	fi
 	env UID=${CURRENT_UID} GID=${CURRENT_GID} docker-compose up
 
 startd:
