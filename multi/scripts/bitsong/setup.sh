@@ -44,7 +44,16 @@ edit_genesis () {
     dasel put string -f $GENESIS '.app_state.gov.voting_params.voting_period' '60s'
     dasel put string -f $GENESIS '.app_state.gov.deposit_params.min_deposit.[0].denom' 'ubtsg'
 
-    # ....remove stake denom
+    # Update mint module
+    dasel put string -f $GENESIS '.app_state.mint.params.mint_denom' 'ubtsg'
+
+    # Update fantoken module
+    dasel put string -f $GENESIS '.app_state.fantoken.params.burn_fee.denom' 'ubtsg'
+    dasel put string -f $GENESIS '.app_state.fantoken.params.issue_fee.denom' 'ubtsg'
+    dasel put string -f $GENESIS '.app_state.fantoken.params.mint_fee.denom' 'ubtsg'
+
+    # Update merkledrop module
+    dasel put string -f $GENESIS '.app_state.merkledrop.params.creation_fee.denom' 'ubtsg'
 }
 
 add_genesis_accounts () {
