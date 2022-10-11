@@ -9,6 +9,7 @@ VALIDATOR_COIN=1000000000ubtsg
 MONIKER=validator1
 
 MNEMONIC="bottom loan skill merry east cradle onion journey palm apology verb edit desert impose absurd oil bubble sweet glove shallow size build burst effort"
+MNEMONIC_FAUCET="tackle fruit urban stand chunk image monkey burger purse feel acquire polar radar moment negative pupil winter chef steak ladder tail town expose west"
 
 edit_config () {
     echo "Edit config..."
@@ -59,9 +60,12 @@ edit_genesis () {
 add_genesis_accounts () {
     echo "Add genesis accounts..."
 
-    $CHAIN_BIN add-genesis-account bitsong1gws6wz8q5kyyu4gqze48fwlmm4m0mdjz0620gw 100000000000ubtsg --home $CHAIN_DIR
+    $CHAIN_BIN add-genesis-account bitsong1gws6wz8q5kyyu4gqze48fwlmm4m0mdjz0620gw 1000000000ubtsg --home $CHAIN_DIR
+    $CHAIN_BIN add-genesis-account bitsong1ermg6v2remlagtq7l32kjwc9vglvc2ytdfx89j 100000000000ubtsg --home $CHAIN_DIR
 
     echo $MNEMONIC | $CHAIN_BIN keys add $MONIKER --recover --keyring-backend=test --home $CHAIN_DIR
+    echo $MNEMONIC_FAUCET | $CHAIN_BIN keys add faucet --recover --keyring-backend=test --home $CHAIN_DIR
+
     $CHAIN_BIN gentx $MONIKER 500000000ubtsg --keyring-backend=test --chain-id=$CHAIN_ID --home $CHAIN_DIR
 
     $CHAIN_BIN collect-gentxs --home $CHAIN_DIR
