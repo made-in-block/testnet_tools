@@ -1,0 +1,13 @@
+FROM node:16-alpine
+
+RUN apk update && apk add git
+
+RUN npm install --global vite
+
+RUN git clone https://github.com/bitsongofficial/console-ui.git ./console --branch testnet
+
+WORKDIR /console
+
+RUN npm install
+
+EXPOSE 5000

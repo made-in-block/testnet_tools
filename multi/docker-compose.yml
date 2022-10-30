@@ -50,7 +50,8 @@ services:
     depends_on:
       - bitsong
       - osmosis
-      
+
+#tools
   explorer:
     build:
       context: ./tools
@@ -62,6 +63,20 @@ services:
     expose:
       - 8080
     command: yarn serve --host 0.0.0.0 --disable-host-check
+    depends_on:
+      - bitsong
+      - osmosis
+  console:
+    build:
+      context: ./tools
+      dockerfile: Dockerfile.console
+    volumes:
+      - ./tools/console/configs/constants/testnet.ts:/console/src/configs/constants/testnet.ts
+    ports:
+      - "5000:5000"
+    expose:
+      - 5000
+    command: vite --host --port 5000
     depends_on:
       - bitsong
       - osmosis
