@@ -32,7 +32,14 @@ stop:
 	docker-compose stop
 
 reset:
+	docker-compose stop
 	docker-compose rm
 	rm -rf ./bitsong || true
 	rm -rf ./osmosis || true 
-	rm -rf ./hermes || true 
+	rm -rf ./hermes || true
+
+restart:
+	docker-compose stop
+	rm -rf ./bitsong || true
+	rm -rf ./osmosis || true 
+	rm -rf ./hermes || true

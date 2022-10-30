@@ -46,16 +46,22 @@ Your environment now contains:
 - [osmosis](https://github.com/osmosis-labs/osmosis) RPC node running on `tcp://localhost:27657`
 - LCD running on http://localhost:1427
 
-Stop `all` (and retain chain data):
+Stop `all` (and **retain** chain data):
 
 ```sh
 make stop
 ```
 
-Stop `all` (and delete chains data):
+Stop `all` (and **delete** chains data):
 
 ```sh
 make restart
+```
+
+Stop `all` and `delete` containers (**delete** chains data and containers):
+
+```sh
+make reset
 ```
 
 ### Modifying node configuration
