@@ -1,0 +1,17 @@
+{
+    "chain_name": "bitsong",
+    "api": ["http://localhost:1317"],
+    "rpc": ["http://localhost:26657"],
+    "sdk_version": "0.45.6",
+    "snapshot_provider": "",
+    "addr_prefix": "bitsong",
+    "coin_type": "639",
+    "min_tx_fee": "5000",
+    "logo": "/logos/bitsong.svg",
+    "assets": [{
+        "base": "ubtsg",
+        "symbol": "BTSG",
+        "exponent": "6",
+        "logo": "/logos/bitsong.svg"
+    }]
+}
