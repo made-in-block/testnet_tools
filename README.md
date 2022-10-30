@@ -1,9 +1,18 @@
-# Docker 4 BitSong
+# Bundle of tools and testnet chains Dockerized for testing purposes
 
-This repository contains docker helpers utility for `go-bitsong`
+This repository contains:
+```bash
+# Chains
+  * go-bitsong v0.11.0
+  * go-bitsong v0.11.0-wasm
+  * osmosis v12.1.0
+  * Hermes Relayer v1.0.0
+# Web tools
+  * Ping-Pub explorer
+  * Bitsong Console-ui
+```
 
 ## Prerequisites
-
 - [`Docker`](https://www.docker.com/)
 - [`docker-compose`](https://github.com/docker/compose)
 
@@ -31,20 +40,26 @@ sudo apt install docker.io -y
 sudo apt install docker-compose -y
 ```
 
-## Start, stop, and reset `bitsong` and `osmosis`
+## Start, stop, and reset `bitsong`, `osmosis` and `tools`
 
-- Start `bitsong` and `osmosis`:
+- Start `bitsong`, `osmosis` and `tools`:
 
 ```sh
 make start
 ```
 
 Your environment now contains:
-
-- [go-bitsong](http://github.com/bitsongofficial/go-bitsong) RPC node running on `tcp://localhost:26657`
-- LCD running on http://localhost:1317
-- [osmosis](https://github.com/osmosis-labs/osmosis) RPC node running on `tcp://localhost:27657`
-- LCD running on http://localhost:1427
+```bash
+# Bitsong endpoints
+  RPC tcp://localhost:26657
+  LCD http://localhost:1317
+# osmosis endpoints
+  RPC tcp://localhost:27657
+  LCD http://localhost:1427
+# Web tools
+  Explorer http://localhost:8080
+  Console-ui http://localhost:5000
+```
 
 Stop `all` (and **retain** chain data):
 
