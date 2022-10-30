@@ -27,6 +27,7 @@ edit_config () {
     # Enable API
     dasel put string -f $CONFIG_DIR/app.toml '.api.enable' 'true'
     dasel put string -f $CONFIG_DIR/app.toml '.api.swagger' 'true'
+    dasel put string -f $CONFIG_DIR/app.toml '.api.enabled-unsafe-cors' 'true'
 }
 
 edit_genesis () {
